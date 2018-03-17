@@ -3,8 +3,8 @@ from telegram.ext import CommandHandler, Filters, MessageHandler, Updater
 
 from core.pugbot import PugBot
 
-API_KEY = config('TOKEN')
-APP_NAME = config('APP_NAME')
+API_KEY = str(config('TOKEN'))
+APP_NAME = str(config('APP_NAME'))
 PORT = int(config('PORT', default='8443'))
 
 
@@ -80,7 +80,7 @@ def main():
     updater.start_webhook(listen='0.0.0.0',
                           port=PORT,
                           url_path=API_KEY)
-    updater.bot.set_webhook(str(APP_NAME) + '/' + str(API_KEY))
+    updater.bot.set_webhook(APP_NAME + '/' + API_KEY)
 
     updater.idle()
 
