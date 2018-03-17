@@ -77,12 +77,11 @@ def main():
     dispatcher.add_handler(meetup_handler)
     dispatcher.add_handler(last_meetup_handler)
 
-    # updater.start_webhook(listen='0.0.0.0',
-    #                      port=PORT,
-    #                      url_path=API_KEY)
-    #updater.bot.set_webhook(str(APP_NAME) + '/' + str(API_KEY))
+    updater.start_webhook(listen='0.0.0.0',
+                          port=PORT,
+                          url_path=API_KEY)
+    updater.bot.set_webhook(str(APP_NAME) + '/' + str(API_KEY))
 
-    updater.start_polling()
     updater.idle()
 
 
