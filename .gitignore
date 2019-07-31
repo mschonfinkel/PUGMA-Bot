@@ -105,3 +105,8 @@ venv.bak/
 
 # editors cache
 .vscode/
+
+# direnv
+.envrc
+.direnv
+result
